@@ -1,4 +1,7 @@
+#!/usr/bin/env python
+
 import time
+from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 import smtplib
@@ -30,6 +33,7 @@ if __name__ == "__main__":
         response = requests.get(url, headers=headers)
         soup = BeautifulSoup(response.text, "lxml")
         if str(soup).count("In Stock") <= 4:
+            print(f"[{datetime.now()}] New Macbook Pro unavailable!")
             time.sleep(60)
             continue
         else:
