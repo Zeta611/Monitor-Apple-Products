@@ -41,9 +41,9 @@ if __name__ == "__main__":
                 from_addr = "jaeho.jay.lee@gmail.com"
                 to_addr = "tomtommy611@iCloud.com"
                 subject = "맥북프로 2019년형 판매 알림"
-                body = "링크: https://www.apple.com/kr/shop/buy-mac/macbook-pro/15형"
+                link = "https://www.apple.com/kr/shop/buy-mac/macbook-pro/15형"
+                body = f"링크: {link}"
                 send_email(from_addr, to_addr, subject, body)
                 break
             except Exception as exception:
-                print("Exception: {exception}\n")
-
+                print(f"Exception: {exception}\n")
